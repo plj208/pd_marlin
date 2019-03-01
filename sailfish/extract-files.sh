@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@
 set -e
 
 VENDOR=google
-DEVICE=marlin
-
-INITIAL_COPYRIGHT_YEAR=2017
+DEVICE=sailfish
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -34,36 +32,30 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Write custom header to allow sailfish to inherit
-function write_marlin_headers() {
-    write_header "$ANDROIDMK"
-
-    cat << EOF >> "$ANDROIDMK"
-LOCAL_PATH := \$(call my-dir)
-
-EOF
-    cat << EOF >> "$ANDROIDMK"
-ifneq (\$(filter marlin sailfish,\$(TARGET_DEVICE)),)
-
-EOF
-
-    write_header "$BOARDMK"
-    write_header "$PRODUCTMK"
-}
+if [ $# -eq 0 ]; then
+  SRC=adb
+else
+  if [ $# -eq 1 ]; then
+    SRC=$1
+  else
+    echo "$0: bad number of arguments"
+    echo ""
+    echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
+    echo ""
+    echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
+    echo "the device using adb pull."
+    exit 1
+  fi
+fi
 
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$PIXELDUST_ROOT"
 
-# Copyright headers and guards
-write_marlin_headers
+extract "$MY_DIR"/../marlin/$DEVICE/device-proprietary-files.txt "$SRC"
+extract "$MY_DIR"/../marlin/$DEVICE/device-proprietary-files-vendor.txt "$SRC"
 
-# The standard blobs
-write_makefiles "$MY_DIR"/device-proprietary-files.txt
-write_makefiles "$MY_DIR"/device-proprietary-files-vendor.txt true
+# Don't disable MyVerizonServices app
+sed -i 's|<disabled-until-used-preinstalled-carrier-app package="com.verizon.mips.services" />|<!--disabled-until-used-preinstalled-carrier-app package="com.verizon.mips.services" /-->|g'\
+    "$PIXELDUST_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/etc/sysconfig/nexus.xml
 
-cat << EOF >> "$ANDROIDMK"
-
-EOF
-
-# Finish
-write_footers
+"$MY_DIR/../marlin/$DEVICE"/setup-makefiles.sh
