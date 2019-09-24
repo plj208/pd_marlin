@@ -42,20 +42,23 @@ PRODUCT_COPY_FILES += \
     vendor/google/taimen/proprietary/lib64/libimscamera_jni.so:system/lib64/libimscamera_jni.so \
     vendor/google/taimen/proprietary/lib64/libimsmedia_jni.so:system/lib64/libimsmedia_jni.so \
     vendor/google/taimen/proprietary/lib64/librcc.so:system/lib64/librcc.so \
-    vendor/google/taimen/proprietary/product/etc/permissions/com.android.omadm.service.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.android.omadm.service.xml \
-    vendor/google/taimen/proprietary/product/etc/permissions/com.android.sdm.plugins.connmo.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.android.sdm.plugins.connmo.xml \
-    vendor/google/taimen/proprietary/product/etc/permissions/com.android.sdm.plugins.sprintdm.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.android.sdm.plugins.sprintdm.xml \
-    vendor/google/taimen/proprietary/product/etc/permissions/com.verizon.apn.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/com.verizon.apn.xml \
-    vendor/google/taimen/proprietary/product/etc/permissions/features-verizon.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/features-verizon.xml \
-    vendor/google/taimen/proprietary/product/etc/permissions/obdm_permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/obdm_permissions.xml \
-    vendor/google/taimen/proprietary/product/etc/permissions/vzw_mvs_permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/vzw_mvs_permissions.xml \
-    vendor/google/taimen/proprietary/product/etc/sysconfig/whitelist_com.android.omadm.service.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/whitelist_com.android.omadm.service.xml \
-    vendor/google/taimen/proprietary/product/lib/libdmengine.so:$(TARGET_COPY_OUT_PRODUCT)/lib/libdmengine.so \
-    vendor/google/taimen/proprietary/product/lib/libdmjavaplugin.so:$(TARGET_COPY_OUT_PRODUCT)/lib/libdmjavaplugin.so \
-    vendor/google/taimen/proprietary/product/lib64/libaptXHD_encoder.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libaptXHD_encoder.so \
-    vendor/google/taimen/proprietary/product/lib64/libaptX_encoder.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libaptX_encoder.so \
-    vendor/google/taimen/proprietary/product/priv-app/MyVerizonServices/lib/arm64/libakuaf.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/MyVerizonServices/lib/arm64/libakuaf.so \
-    vendor/google/taimen/proprietary/product/priv-app/MyVerizonServices/lib/arm64/libmotricity.so:$(TARGET_COPY_OUT_PRODUCT)/priv-app/MyVerizonServices/lib/arm64/libmotricity.so
+    vendor/google/taimen/proprietary/product/etc/permissions/com.android.omadm.service.xml:system/product/etc/permissions/com.android.omadm.service.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/com.android.sdm.plugins.connmo.xml:system/product/etc/permissions/com.android.sdm.plugins.connmo.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/com.android.sdm.plugins.sprintdm.xml:system/product/etc/permissions/com.android.sdm.plugins.sprintdm.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/com.verizon.apn.xml:system/product/etc/permissions/com.verizon.apn.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/features-verizon.xml:system/product/etc/permissions/features-verizon.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/com.android.sdm.plugins.dcmo.xml:system/product/etc/permissions/com.android.sdm.plugins.dcmo.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/privapp-permissions-google-p.xml:system/product/etc/permissions/privapp-permissions-google-p.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/privapp-permissions-google-ps.xml:system/product/etc/permissions/privapp-permissions-google-ps.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/obdm_permissions.xml:system/product/etc/permissions/obdm_permissions.xml \
+    vendor/google/taimen/proprietary/product/etc/permissions/vzw_mvs_permissions.xml:system/product/etc/permissions/vzw_mvs_permissions.xml \
+    vendor/google/taimen/proprietary/product/etc/sysconfig/whitelist_com.android.omadm.service.xml:system/product/etc/sysconfig/whitelist_com.android.omadm.service.xml \
+    vendor/google/taimen/proprietary/product/lib/libdmengine.so:system/product/lib/libdmengine.so \
+    vendor/google/taimen/proprietary/product/lib/libdmjavaplugin.so:system/product/lib/libdmjavaplugin.so \
+    vendor/google/taimen/proprietary/product/lib64/libaptXHD_encoder.so:system/product/lib64/libaptXHD_encoder.so \
+    vendor/google/taimen/proprietary/product/lib64/libaptX_encoder.so:system/product/lib64/libaptX_encoder.so \
+    vendor/google/taimen/proprietary/product/priv-app/MyVerizonServices/lib/arm64/libakuaf.so:system/product/priv-app/MyVerizonServices/lib/arm64/libakuaf.so \
+    vendor/google/taimen/proprietary/product/priv-app/MyVerizonServices/lib/arm64/libmotricity.so:system/product/priv-app/MyVerizonServices/lib/arm64/libmotricity.so
 
 PRODUCT_PACKAGES += \
     ims \
