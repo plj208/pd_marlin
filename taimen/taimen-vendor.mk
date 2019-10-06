@@ -77,6 +77,7 @@ PRODUCT_PACKAGES += \
     HotwordEnrollmentXGoogleWCD9340 \
     MyVerizonServices \
     OBDM_Permissions \
+    QtiTelephonyService \
     SprintDM \
     SprintHM \
     WfcActivation \
