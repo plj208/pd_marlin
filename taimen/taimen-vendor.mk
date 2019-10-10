@@ -16,7 +16,6 @@
 
 # Prebuilt apps
 PRODUCT_PACKAGES += \
-    AmbientSensePrebuilt \
     AppDirectedSMSService \
     CarrierServices \
     CarrierSettings \
