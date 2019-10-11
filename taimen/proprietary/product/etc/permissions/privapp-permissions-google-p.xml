@@ -33,12 +33,35 @@ It allows additional grants on top of privapp-permissions-platform.xml
     </privapp-permissions>
 
     <privapp-permissions package="com.android.systemui">
+	<permission name="android.permission.CHANGE_CONFIGURATION"/>    
         <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
-        <permission name="android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"/>
+	<permission name="android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"/>
+	<permission name="android.permission.FORCE_STOP_PACKAGES"/>
         <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
         <permission name="android.permission.LOCATION_HARDWARE"/>
         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
         <permission name="android.permission.DUMP"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.settings">
+    	<permission name="android.permission.RESET_BATTERY_STATS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.google.android.settings.intelligence">
+        <permission name="android.permission.READ_SEARCH_INDEXABLES" fixed="true"/>
+        <permission name="android.permission.MANAGE_FINGERPRINT" fixed="true"/>
+        <permission name="android.permission.WRITE_SETTINGS_HOMEPAGE_DATA" fixed="true"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" fixed="true"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE" fixed="true"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" fixed="true"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.wallpaper">
+        <permission name="android.permission.BIND_WALLPAPER"/>
+        <permission name="android.permission.CHANGE_OVERLAY_PACKAGES"/>
+        <permission name="android.permission.READ_WALLPAPER_INTERNAL"/>
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.android.yadayada">
